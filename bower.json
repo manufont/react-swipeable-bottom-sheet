@@ -1,0 +1,29 @@
+{
+  "name": "react-swipeable-bottom-sheet",
+  "version": "0.0.0",
+  "description": "Swipeable Bottom Sheet",
+  "main": "dist/react-swipeable-bottom-sheet.min.js",
+  "homepage": "https://github.com/manufont/react-swipeable-bottom-sheet",
+  "authors": [
+    "Emmanuel Fonteneau"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}
