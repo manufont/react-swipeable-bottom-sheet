@@ -9,7 +9,7 @@ This can be used to reproduce Material Design's [Bottom Sheet](https://material.
 
 ```
 npm install react-swipeable-bottom-sheet --save
-
+```
 
 ## Demo & Examples
 
@@ -47,8 +47,8 @@ The bottom sheet's height (when open) scales automatically with its content's he
 
 ### Properties
 
-| Name | Type | Default | Platform | Description |
-|:-----|:-----|:--------|:---------|:------------|
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
 | overflowHeight | number | 0 | The height of the sheet when closed. |
 | open | bool | | Use this property to enable controlled mode. If `true`, it will open the sheet. |
 | defaultOpen | bool | false | If `true`, the sheet is open at component mount. |
