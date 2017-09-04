@@ -40,7 +40,7 @@ The bottom sheet's height (when open) scales automatically with its content's he
 
 | Name | Type | Default | Description |
 |:-----|:-----|:--------|:------------|
-| overflowHeight | number | 64 | The height (in px) of the sheet when closed. |
+| overflowHeight | number | 0 | The height (in px) of the sheet when closed. |
 | open | bool | | Use this property to enable controlled mode. If `true`, it will open the sheet. |
 | defaultOpen | bool | false | If `true`, the sheet is open at component mount. |
 | onChange | function(isOpen) | | The callback that fires after sheet opens or closes. |
