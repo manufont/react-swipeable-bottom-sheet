@@ -25,7 +25,8 @@ npm i -S react-swipeable-bottom-sheet
 ```
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet';
 
-<SwipeableBottomSheet>
+<SwipeableBottomSheet
+overflowHeight={64}>
 	<div style={{ height: '240px' }}>
 		Here goes the content of your bottom sheet
 	</div>
