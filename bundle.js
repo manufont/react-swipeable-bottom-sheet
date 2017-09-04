@@ -3899,11 +3899,11 @@ var SwipeableBottomSheet = (function (_React$Component) {
 
 			var s = {
 				root: _extends({
-					width: '100vw',
 					height: height,
 					position: 'fixed',
 					bottom: 0,
-					right: 0
+					right: 0,
+					left: 0
 				}, this.props.style),
 				swiper: {
 					root: _extends({
@@ -3990,7 +3990,7 @@ var SwipeableBottomSheet = (function (_React$Component) {
 
 SwipeableBottomSheet.propTypes = {
 	bodyStyle: _propTypes2['default'].object,
-	children: _propTypes2['default'].element.isRequired,
+	children: _propTypes2['default'].node.isRequired,
 	defaultOpen: _propTypes2['default'].bool,
 	onChange: _propTypes2['default'].func,
 	open: _propTypes2['default'].bool,

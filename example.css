@@ -2,13 +2,6 @@
 // Examples Stylesheet
 // -------------------
 */
-html,
-body,
-#app {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-}
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
