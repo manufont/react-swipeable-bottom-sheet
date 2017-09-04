@@ -40,11 +40,11 @@ class SwipeableBottomSheet extends React.Component {
 
 		const s = {
 			root:{
-				width: '100vw',
 				height: height,
 				position: 'fixed',
 				bottom: 0,
 				right: 0,
+				left: 0,
 				...this.props.style
 			},
 			swiper:{
@@ -132,7 +132,7 @@ class SwipeableBottomSheet extends React.Component {
 
 SwipeableBottomSheet.propTypes = {
   bodyStyle: PropTypes.object,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   defaultOpen: PropTypes.bool,
   onChange: PropTypes.func,
   open: PropTypes.bool,
