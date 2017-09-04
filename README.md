@@ -8,23 +8,14 @@ This can be used to reproduce Material Design's [Bottom Sheet](https://material.
 
 
 ```
-npm install react-swipeable-bottom-sheet --save
+npm i -S react-swipeable-bottom-sheet
 ```
 
 ## Demo & Examples
 
-- [Uncontrolled bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/uncontrolled.html)
+- [Uncontrolled bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/index.html)
 - [Controlled bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/controlled.html)
 - [Fullscreen bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/fullscreen.html)
-
-To build the examples locally, run:
-
-```
-npm install
-npm start
-```
-
-Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
 
 ## Usage
@@ -33,9 +24,8 @@ Then open [`localhost:8000`](http://localhost:8000) in a browser.
 ```
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet';
 
-<SwipeableBottomSheet
-overflowHeight={64}>
-	<div>
+<SwipeableBottomSheet>
+	<div style={{ height: '240px' }}>
 		Here goes the content of your bottom sheet
 	</div>
 </SwipeableBottomSheet>
@@ -48,7 +38,7 @@ The bottom sheet's height (when open) scales automatically with its content's he
 
 | Name | Type | Default | Description |
 |:-----|:-----|:--------|:------------|
-| overflowHeight | number | 0 | The height of the sheet when closed. |
+| overflowHeight | number | 64 | The height (in px) of the sheet when closed. |
 | open | bool | | Use this property to enable controlled mode. If `true`, it will open the sheet. |
 | defaultOpen | bool | false | If `true`, the sheet is open at component mount. |
 | onChange | function(isOpen) | | The callback that fires after sheet opens or closes. |
@@ -64,6 +54,15 @@ The bottom sheet's height (when open) scales automatically with its content's he
 ## Development (`src`, `lib` and the build process)
 
 **NOTE:** The source code for the component is in `src`. A transpiled CommonJS version (generated with Babel) is available in `lib` for use with node.js, browserify and webpack. A UMD bundle is also built to `dist`, which can be included without the need for any build system.
+
+To build the examples locally, run:
+
+```
+npm install
+npm start
+```
+
+Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
 To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `lib`, run `npm run watch` (this is useful if you are working with `npm link`).
 

@@ -26,7 +26,7 @@ var taskConfig = {
 		src: 'example/src',
 		dist: 'example/dist',
 		files: [
-			'uncontrolled.html',
+			'index.html',
 			'controlled.html',
 			'fullscreen.html',
 			'.gitignore'
