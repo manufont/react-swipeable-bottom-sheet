@@ -37,11 +37,11 @@ var App = (function (_React$Component) {
 		value: function render() {
 			var styles = {
 				title: {
-					backgroundColor: '#3949ab',
+					backgroundColor: '#00bcd4',
 					padding: '16px 0',
 					boxSizing: 'border-box',
 					color: 'white',
-					height: '64px',
+					minHeight: '64px',
 					fontSize: '24px',
 					textAlign: 'center'
 				},
@@ -63,7 +63,7 @@ var App = (function (_React$Component) {
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.title },
-						'Basic overflowing bottom sheet'
+						'Swipeable bottom sheet'
 					),
 					_react2['default'].createElement(
 						'div',

@@ -47,15 +47,11 @@ var App = (function (_React$Component) {
 			var _this = this;
 
 			var styles = {
-				body: {
-					height: '100vh'
-				},
 				title: {
-					backgroundColor: '#3949ab',
+					backgroundColor: '#00bcd4',
 					padding: '16px 0',
 					boxSizing: 'border-box',
 					color: 'white',
-					height: '64px',
 					fontSize: '24px',
 					textAlign: 'center'
 				},
@@ -82,7 +78,7 @@ var App = (function (_React$Component) {
 					{
 						open: this.state.open,
 						onChange: this.openBottomSheet.bind(this),
-						bodyStyle: styles.body,
+						fullScreen: true,
 						shadowTip: false,
 						topShadow: false },
 					_react2['default'].createElement(
@@ -100,7 +96,7 @@ var App = (function (_React$Component) {
 							{ onClick: function () {
 									return _this.openBottomSheet(false);
 								} },
-							'close bottom sheet'
+							'Close'
 						)
 					)
 				)

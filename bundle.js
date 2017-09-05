@@ -3825,7 +3825,78 @@ if ("production" !== 'production') {
 
 module.exports = warning;
 
-},{}],"react-swipeable-bottom-sheet":[function(require,module,exports){
+},{}],114:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var HeightUpdater = (function (_Component) {
+	_inherits(HeightUpdater, _Component);
+
+	function HeightUpdater() {
+		_classCallCheck(this, HeightUpdater);
+
+		_get(Object.getPrototypeOf(HeightUpdater.prototype), 'constructor', this).apply(this, arguments);
+	}
+
+	_createClass(HeightUpdater, [{
+		key: 'onWindowResize',
+		value: function onWindowResize() {
+			var height = window.innerHeight;
+			if (height !== this.props.height) {
+				this.props.onHeightChange(height);
+			}
+		}
+	}, {
+		key: 'componentWillMount',
+		value: function componentWillMount() {
+			window.addEventListener('resize', this.onWindowResize.bind(this));
+			this.onWindowResize();
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.onWindowResize.bind(this));
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return null;
+		}
+	}]);
+
+	return HeightUpdater;
+})(_react.Component);
+
+HeightUpdater.propTypes = {
+	height: _propTypes2['default'].number,
+	onHeightChange: _propTypes2['default'].func
+};
+
+exports['default'] = HeightUpdater;
+module.exports = exports['default'];
+
+},{"prop-types":100,"react":undefined}],"react-swipeable-bottom-sheet":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3856,8 +3927,12 @@ var _reactSwipeableViews = require('react-swipeable-views');
 
 var _reactSwipeableViews2 = _interopRequireDefault(_reactSwipeableViews);
 
-var SwipeableBottomSheet = (function (_React$Component) {
-	_inherits(SwipeableBottomSheet, _React$Component);
+var _HeightUpdater = require('./HeightUpdater');
+
+var _HeightUpdater2 = _interopRequireDefault(_HeightUpdater);
+
+var SwipeableBottomSheet = (function (_Component) {
+	_inherits(SwipeableBottomSheet, _Component);
 
 	function SwipeableBottomSheet(props) {
 		_classCallCheck(this, SwipeableBottomSheet);
@@ -3865,11 +3940,16 @@ var SwipeableBottomSheet = (function (_React$Component) {
 		_get(Object.getPrototypeOf(SwipeableBottomSheet.prototype), 'constructor', this).call(this, props);
 
 		this.state = {
-			open: props.defaultOpen === true
+			open: props.defaultOpen
 		};
 	}
 
 	_createClass(SwipeableBottomSheet, [{
+		key: 'onHeightChange',
+		value: function onHeightChange(height) {
+			this.setState({ height: height });
+		}
+	}, {
 		key: 'onChangeIndex',
 		value: function onChangeIndex(index) {
 			var open = index === 1;
@@ -3885,21 +3965,23 @@ var SwipeableBottomSheet = (function (_React$Component) {
 		value: function render() {
 			var _this = this;
 
-			var height = this.props.overflowHeight || 0;
+			var _props = this.props;
+			var overflowHeight = _props.overflowHeight;
+			var fullScreen = _props.fullScreen;
+			var scrollOnWindowOverflow = _props.scrollOnWindowOverflow;
+			var open = _props.open;
+			var topShadow = _props.topShadow;
+			var shadowTip = _props.shadowTip;
+			var overlay = _props.overlay;
+			var swipeableViewsProps = _props.swipeableViewsProps;
 
-			var controlled = this.props.open !== undefined;
-			var isOpen = controlled ? this.props.open : this.state.open;
+			var isControlled = open !== undefined;
+			var isOpen = isControlled ? open : this.state.open;
 			var index = isOpen ? 1 : 0;
 
-			//default parameters
-			var topShadow = this.props.topShadow !== false;
-			var shadowTip = this.props.shadowTip !== false;
-			var overlay = this.props.overlay !== false;
-			var swipeableViewsProps = this.props.swipeableViewsProps || {};
-
-			var s = {
+			var styles = {
 				root: _extends({
-					height: height,
+					height: overflowHeight,
 					position: 'fixed',
 					bottom: 0,
 					right: 0,
@@ -3918,14 +4000,18 @@ var SwipeableBottomSheet = (function (_React$Component) {
 					slide: _extends({
 						boxSizing: 'border-box',
 						overflow: 'visible',
-						marginBottom: -height
+						marginBottom: -overflowHeight
 					}, swipeableViewsProps.slideStyle),
 					bottomSlide: {
-						marginBottom: height
+						marginBottom: overflowHeight
 					},
 					body: _extends({
 						overflow: 'hidden',
 						backgroundColor: 'white'
+					}, scrollOnWindowOverflow && {
+						overflow: isOpen ? 'auto' : 'hidden',
+						height: fullScreen ? this.state.height : 'initial',
+						maxHeight: fullScreen ? 'initial' : this.state.height
 					}, this.props.bodyStyle)
 				},
 				overlay: _extends({
@@ -3956,8 +4042,11 @@ var SwipeableBottomSheet = (function (_React$Component) {
 
 			return _react2['default'].createElement(
 				'div',
-				{ style: s.root },
-				overlay && _react2['default'].createElement('div', { style: s.overlay, onClick: function () {
+				{ style: styles.root },
+				scrollOnWindowOverflow && _react2['default'].createElement(_HeightUpdater2['default'], {
+					height: this.state.height,
+					onHeightChange: this.onHeightChange.bind(this) }),
+				overlay && _react2['default'].createElement('div', { style: styles.overlay, onClick: function () {
 						return _this.onChangeIndex(0);
 					} }),
 				_react2['default'].createElement(
@@ -3968,23 +4057,23 @@ var SwipeableBottomSheet = (function (_React$Component) {
 						enableMouseEvents: true,
 						onChangeIndex: this.onChangeIndex.bind(this)
 					}, this.props.swipeableViewsProps, {
-						style: s.swiper.root,
-						containerStyle: s.swiper.container,
-						slideStyle: s.swiper.slide }),
+						style: styles.swiper.root,
+						containerStyle: styles.swiper.container,
+						slideStyle: styles.swiper.slide }),
 					_react2['default'].createElement(
 						'div',
-						{ style: s.swiper.body },
+						{ style: styles.swiper.body },
 						this.props.children
 					),
-					_react2['default'].createElement('div', { style: s.swiper.bottomSlide })
+					_react2['default'].createElement('div', { style: styles.swiper.bottomSlide })
 				),
-				shadowTip && _react2['default'].createElement('div', { style: s.shadowTip })
+				shadowTip && _react2['default'].createElement('div', { style: styles.shadowTip })
 			);
 		}
 	}]);
 
 	return SwipeableBottomSheet;
-})(_react2['default'].Component);
+})(_react.Component);
 
 ;
 
@@ -3992,18 +4081,31 @@ SwipeableBottomSheet.propTypes = {
 	bodyStyle: _propTypes2['default'].object,
 	children: _propTypes2['default'].node.isRequired,
 	defaultOpen: _propTypes2['default'].bool,
+	fullScreen: _propTypes2['default'].bool,
 	onChange: _propTypes2['default'].func,
 	open: _propTypes2['default'].bool,
 	overflowHeight: _propTypes2['default'].number,
 	overlay: _propTypes2['default'].bool,
 	overlayStyle: _propTypes2['default'].object,
+	scrollOnWindowOverflow: _propTypes2['default'].bool,
 	shadowTip: _propTypes2['default'].bool,
 	style: _propTypes2['default'].object,
 	swipeableViewsProps: _propTypes2['default'].object,
 	topShadow: _propTypes2['default'].bool
 };
 
+SwipeableBottomSheet.defaultProps = {
+	defaultOpen: false,
+	fullScreen: false,
+	overflowHeight: 0,
+	overlay: true,
+	scrollOnWindowOverflow: true,
+	shadowTip: true,
+	swipeableViewsProps: {},
+	topShadow: true
+};
+
 exports['default'] = SwipeableBottomSheet;
 module.exports = exports['default'];
 
-},{"prop-types":100,"react":undefined,"react-swipeable-views":112}]},{},[]);
+},{"./HeightUpdater":114,"prop-types":100,"react":undefined,"react-swipeable-views":112}]},{},[]);

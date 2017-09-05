@@ -50,11 +50,8 @@ var App = (function (_React$Component) {
 		key: 'render',
 		value: function render() {
 			var styles = {
-				header: {
-					display: 'flex'
-				},
 				title: {
-					backgroundColor: '#3949ab',
+					backgroundColor: '#00bcd4',
 					padding: '16px 0',
 					boxSizing: 'border-box',
 					color: 'white',
@@ -82,16 +79,12 @@ var App = (function (_React$Component) {
 						onChange: this.openBottomSheet.bind(this) },
 					_react2['default'].createElement(
 						'div',
-						{ style: styles.header },
-						_react2['default'].createElement(
-							'div',
-							{ style: styles.title },
-							'Controlled bottom sheet'
-						),
+						{ style: styles.title },
+						'Controlled bottom sheet ',
 						_react2['default'].createElement(
 							'button',
 							{ onClick: this.toggleBottomSheet.bind(this) },
-							'Toggle'
+							this.state.open ? 'Close' : 'Open'
 						)
 					),
 					_react2['default'].createElement(
