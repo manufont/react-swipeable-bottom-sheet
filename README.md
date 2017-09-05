@@ -33,7 +33,7 @@ overflowHeight={64}>
 </SwipeableBottomSheet>
 ```
 
-The bottom sheet's height (when open) scales automatically with its content's height.
+The bottom sheet's height (when open) scales automatically with its content.
 
 
 ### Properties
@@ -44,13 +44,15 @@ The bottom sheet's height (when open) scales automatically with its content's he
 | open | bool | | Use this property to enable controlled mode. If `true`, it will open the sheet. |
 | defaultOpen | bool | false | If `true`, the sheet is open at component mount. |
 | onChange | function(isOpen) | | The callback that fires after sheet opens or closes. |
-| shadowTip | bool | true | If `true`, a box shadow is displayed at sheet's bottom when closed. This is used to show that content is hidden below. |
-| topShadow | bool | true | If `true`, a box shadow is displayed at sheet's top border. |
+| scrollOnWindowOverflow | bool | true | If `true`, the sheet content will scroll when overflowing window height |
+| fullScreen | bool | false | If `true`, the sheet takes the full height of the window when open. |
+| shadowTip | bool | true | If `true`, a box shadow is displayed at sheet bottom when closed. This is used to show that content is hidden below. |
+| topShadow | bool | true | If `true`, a box shadow is displayed at sheet top border. |
 | overlay | bool | true | If `true`, an overlay is displayed behind sheet when open. A click on the overlay closes the sheet. |
 | swipeableViewsProps | object | `{}` | Props passed to SwipeableViews component. |
-| style | object | `{}` | This is the inlined style that will be applied on the root (non-swiped) component. |
-| bodyStyle | object | `{}` | This is the inlined style that will be applied on the body of the bottom sheet. |
-| overlayStyle | object | `{}` | This is the inlined style that will be applied on the overlay. |
+| style | object | `{}` | Style applied on the root (non-swiped) component. |
+| bodyStyle | object | `{}` | Style applied on the body of the bottom sheet. |
+| overlayStyle | object | `{}` | Style applied on the overlay. |
 
 
 ## Development (`src`, `lib` and the build process)

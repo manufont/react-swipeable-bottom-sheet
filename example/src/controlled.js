@@ -21,11 +21,8 @@ class App extends React.Component {
 
 	render () {
 		const styles={
-			header:{
-				display: 'flex'
-			},
 			title:{
-				backgroundColor: '#3949ab',
+				backgroundColor: '#00bcd4',
 				padding: '16px 0',
 				boxSizing: 'border-box',
 				color: 'white',
@@ -48,11 +45,11 @@ class App extends React.Component {
 				overflowHeight={64}
 				open={this.state.open}
 				onChange={this.openBottomSheet.bind(this)}>
-					<div style={styles.header}>
-						<div style={styles.title}>
-							Controlled bottom sheet
-						</div>
-						<button onClick={this.toggleBottomSheet.bind(this)}>Toggle</button>
+					<div style={styles.title}>
+						Controlled bottom sheet&nbsp;
+						<button onClick={this.toggleBottomSheet.bind(this)}>
+							{this.state.open ? 'Close' : 'Open'}
+						</button>
 					</div>
 					<div style={styles.text}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

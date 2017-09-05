@@ -17,15 +17,11 @@ class App extends React.Component {
 
 	render () {
 		const styles={
-			body: {
-				height: '100vh'
-			},
 			title:{
-				backgroundColor: '#3949ab',
+				backgroundColor: '#00bcd4',
 				padding: '16px 0',
 				boxSizing: 'border-box',
 				color: 'white',
-				height: '64px',
 				fontSize: '24px',
 				textAlign: 'center'
 			},
@@ -43,7 +39,7 @@ class App extends React.Component {
 				<SwipeableBottomSheet
 				open={this.state.open}
 				onChange={this.openBottomSheet.bind(this)}
-				bodyStyle={styles.body}
+				fullScreen
 				shadowTip={false}
 				topShadow={false}>
 					<div style={styles.title}>
@@ -56,7 +52,7 @@ class App extends React.Component {
 						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 						deserunt mollit anim id est laborum.<br/>
-						<button onClick={() => this.openBottomSheet(false)}>close bottom sheet</button>
+						<button onClick={() => this.openBottomSheet(false)}>Close</button>
 					</div>
 				</SwipeableBottomSheet>
 			</div>

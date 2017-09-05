@@ -6,11 +6,11 @@ class App extends React.Component {
 	render () {
 		const styles={
 			title:{
-				backgroundColor: '#3949ab',
+				backgroundColor: '#00bcd4',
 				padding: '16px 0',
 				boxSizing: 'border-box',
 				color: 'white',
-				height: '64px',
+				minHeight: '64px',
 				fontSize: '24px',
 				textAlign: 'center'
 			},
@@ -27,7 +27,7 @@ class App extends React.Component {
 				<SwipeableBottomSheet
 				overflowHeight={64}>
 					<div style={styles.title}>
-						Basic overflowing bottom sheet
+						Swipeable bottom sheet
 					</div>
 					<div style={styles.text}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
