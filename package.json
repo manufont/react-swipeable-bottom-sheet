@@ -1,6 +1,6 @@
 {
   "name": "react-swipeable-bottom-sheet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Swipeable Bottom Sheet",
   "main": "lib/SwipeableBottomSheet.js",
   "author": "Emmanuel Fonteneau",

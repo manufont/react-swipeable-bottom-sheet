@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 
 
 class HeightUpdater extends Component {
+	constructor(props){
+		super(props);
+
+		this.onWindowResize = this.onWindowResize.bind(this);
+	}
+
 	onWindowResize(){
 		const height = window.innerHeight;
 		if(height !== this.props.height){
@@ -11,12 +17,12 @@ class HeightUpdater extends Component {
 	}
 
 	componentWillMount(){
-		window.addEventListener('resize', this.onWindowResize.bind(this));
+		window.addEventListener('resize', this.onWindowResize);
 		this.onWindowResize();
 	}
 
 	componentWillUnmount(){
-		window.removeEventListener('resize', this.onWindowResize.bind(this));
+		window.removeEventListener('resize', this.onWindowResize);
 	}
 
 	render(){
