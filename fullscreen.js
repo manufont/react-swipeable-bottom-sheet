@@ -80,7 +80,8 @@ var App = (function (_React$Component) {
 						onChange: this.openBottomSheet.bind(this),
 						fullScreen: true,
 						shadowTip: false,
-						topShadow: false },
+						topShadow: false
+					},
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.title },

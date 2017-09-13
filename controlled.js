@@ -76,7 +76,8 @@ var App = (function (_React$Component) {
 					{
 						overflowHeight: 64,
 						open: this.state.open,
-						onChange: this.openBottomSheet.bind(this) },
+						onChange: this.openBottomSheet.bind(this)
+					},
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.title },

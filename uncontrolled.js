@@ -58,8 +58,7 @@ var App = (function (_React$Component) {
 				null,
 				_react2['default'].createElement(
 					_reactSwipeableBottomSheet2['default'],
-					{
-						overflowHeight: 64 },
+					{ overflowHeight: 64 },
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.title },
