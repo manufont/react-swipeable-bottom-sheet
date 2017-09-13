@@ -3973,7 +3973,6 @@ var SwipeableBottomSheet = (function (_Component) {
 			var _props = this.props;
 			var overflowHeight = _props.overflowHeight;
 			var fullScreen = _props.fullScreen;
-			var scrollOnWindowOverflow = _props.scrollOnWindowOverflow;
 			var open = _props.open;
 			var topShadow = _props.topShadow;
 			var shadowTip = _props.shadowTip;
@@ -4011,12 +4010,10 @@ var SwipeableBottomSheet = (function (_Component) {
 						marginBottom: overflowHeight
 					},
 					body: _extends({
-						overflow: 'hidden',
-						backgroundColor: 'white'
-					}, scrollOnWindowOverflow && {
 						overflow: isOpen ? 'auto' : 'hidden',
+						backgroundColor: 'white',
 						height: fullScreen ? this.state.height : 'initial',
-						maxHeight: fullScreen ? 'initial' : this.state.height
+						maxHeight: this.state.height
 					}, this.props.bodyStyle)
 				},
 				overlay: _extends({
@@ -4048,9 +4045,10 @@ var SwipeableBottomSheet = (function (_Component) {
 			return _react2['default'].createElement(
 				'div',
 				{ style: styles.root },
-				scrollOnWindowOverflow && _react2['default'].createElement(_HeightUpdater2['default'], {
+				_react2['default'].createElement(_HeightUpdater2['default'], {
 					height: this.state.height,
-					onHeightChange: this.onHeightChange.bind(this) }),
+					onHeightChange: this.onHeightChange.bind(this)
+				}),
 				overlay && _react2['default'].createElement('div', { style: styles.overlay, onClick: function () {
 						return _this.onChangeIndex(0);
 					} }),
@@ -4064,7 +4062,8 @@ var SwipeableBottomSheet = (function (_Component) {
 					}, this.props.swipeableViewsProps, {
 						style: styles.swiper.root,
 						containerStyle: styles.swiper.container,
-						slideStyle: styles.swiper.slide }),
+						slideStyle: styles.swiper.slide
+					}),
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.swiper.body },
@@ -4092,7 +4091,6 @@ SwipeableBottomSheet.propTypes = {
 	overflowHeight: _propTypes2['default'].number,
 	overlay: _propTypes2['default'].bool,
 	overlayStyle: _propTypes2['default'].object,
-	scrollOnWindowOverflow: _propTypes2['default'].bool,
 	shadowTip: _propTypes2['default'].bool,
 	style: _propTypes2['default'].object,
 	swipeableViewsProps: _propTypes2['default'].object,
@@ -4104,7 +4102,6 @@ SwipeableBottomSheet.defaultProps = {
 	fullScreen: false,
 	overflowHeight: 0,
 	overlay: true,
-	scrollOnWindowOverflow: true,
 	shadowTip: true,
 	swipeableViewsProps: {},
 	topShadow: true

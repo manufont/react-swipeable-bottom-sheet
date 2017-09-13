@@ -35,7 +35,6 @@ class SwipeableBottomSheet extends Component {
 		const {
 			overflowHeight,
 			fullScreen,
-			scrollOnWindowOverflow,
 			open,
 			topShadow,
 			shadowTip,
@@ -79,13 +78,10 @@ class SwipeableBottomSheet extends Component {
 					marginBottom: overflowHeight,
 				},
 				body:{
-					overflow: 'hidden',
+					overflow: isOpen ? 'auto' : 'hidden',
 					backgroundColor: 'white',
-					...scrollOnWindowOverflow && {
-						overflow: isOpen ? 'auto' : 'hidden',
-						height: fullScreen ? this.state.height : 'initial',
-						maxHeight: fullScreen ? 'initial' : this.state.height
-					},
+					height: fullScreen ? this.state.height : 'initial',
+					maxHeight: this.state.height,
 					...this.props.bodyStyle
 				}
 			},
@@ -119,23 +115,23 @@ class SwipeableBottomSheet extends Component {
 
 		return (
 			<div style={styles.root}>
-				{scrollOnWindowOverflow &&
-					<HeightUpdater
+				<HeightUpdater
 					height={this.state.height}
-					onHeightChange={this.onHeightChange.bind(this)}/>
-				}
+					onHeightChange={this.onHeightChange.bind(this)}
+				/>
 				{overlay &&
 					<div style={styles.overlay} onClick={() => this.onChangeIndex(0)}/>
 				}
 				<SwipeableViews
-				index={index}
-				axis="y"
-				enableMouseEvents
-				onChangeIndex={this.onChangeIndex.bind(this)}
-				{...this.props.swipeableViewsProps}
-				style={styles.swiper.root}
-				containerStyle={styles.swiper.container}
-				slideStyle={styles.swiper.slide}>
+					index={index}
+					axis="y"
+					enableMouseEvents
+					onChangeIndex={this.onChangeIndex.bind(this)}
+					{...this.props.swipeableViewsProps}
+					style={styles.swiper.root}
+					containerStyle={styles.swiper.container}
+					slideStyle={styles.swiper.slide}
+				>
 					<div style={styles.swiper.body}>
 						{this.props.children}
 					</div>
@@ -159,7 +155,6 @@ SwipeableBottomSheet.propTypes = {
 	overflowHeight: PropTypes.number,
 	overlay: PropTypes.bool,
 	overlayStyle: PropTypes.object,
-	scrollOnWindowOverflow: PropTypes.bool,
 	shadowTip: PropTypes.bool,
 	style: PropTypes.object,
 	swipeableViewsProps: PropTypes.object,
@@ -171,7 +166,6 @@ SwipeableBottomSheet.defaultProps = {
 	fullScreen: false,
 	overflowHeight: 0,
 	overlay: true,
-	scrollOnWindowOverflow: true,
 	shadowTip: true,
   	swipeableViewsProps: {},
   	topShadow: true

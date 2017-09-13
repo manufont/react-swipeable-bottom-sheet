@@ -35,13 +35,16 @@ class App extends React.Component {
 
 		return (
 			<div>
-				<button onClick={() => this.openBottomSheet(true)}>Open bottom sheet</button>
+				<button onClick={() => this.openBottomSheet(true)}>
+					Open bottom sheet
+				</button>
 				<SwipeableBottomSheet
-				open={this.state.open}
-				onChange={this.openBottomSheet.bind(this)}
-				fullScreen
-				shadowTip={false}
-				topShadow={false}>
+					open={this.state.open}
+					onChange={this.openBottomSheet.bind(this)}
+					fullScreen
+					shadowTip={false}
+					topShadow={false}
+				>
 					<div style={styles.title}>
 						Controlled fullscreen bottom sheet
 					</div>
@@ -52,7 +55,9 @@ class App extends React.Component {
 						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 						deserunt mollit anim id est laborum.<br/>
-						<button onClick={() => this.openBottomSheet(false)}>Close</button>
+						<button onClick={() => this.openBottomSheet(false)}>
+							Close
+						</button>
 					</div>
 				</SwipeableBottomSheet>
 			</div>

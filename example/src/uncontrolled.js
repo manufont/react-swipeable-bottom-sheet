@@ -24,8 +24,7 @@ class App extends React.Component {
 
 		return (
 			<div>
-				<SwipeableBottomSheet
-				overflowHeight={64}>
+				<SwipeableBottomSheet overflowHeight={64}>
 					<div style={styles.title}>
 						Swipeable bottom sheet
 					</div>

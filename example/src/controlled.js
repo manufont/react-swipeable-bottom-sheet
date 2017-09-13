@@ -42,9 +42,10 @@ class App extends React.Component {
 		return (
 			<div>
 				<SwipeableBottomSheet
-				overflowHeight={64}
-				open={this.state.open}
-				onChange={this.openBottomSheet.bind(this)}>
+					overflowHeight={64}
+					open={this.state.open}
+					onChange={this.openBottomSheet.bind(this)}
+				>
 					<div style={styles.title}>
 						Controlled bottom sheet&nbsp;
 						<button onClick={this.toggleBottomSheet.bind(this)}>
