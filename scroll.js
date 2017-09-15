@@ -57,8 +57,7 @@ var App = (function (_React$Component) {
 				_reactSwipeableBottomSheet2['default'],
 				{
 					overflowHeight: 64,
-					marginTop: 128,
-					scrollTopAtClose: false
+					marginTop: 128
 				},
 				_react2['default'].createElement(
 					'div',
