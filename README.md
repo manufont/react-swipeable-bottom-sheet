@@ -17,6 +17,7 @@ npm i -S react-swipeable-bottom-sheet
 - [Uncontrolled bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/index.html)
 - [Controlled bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/controlled.html)
 - [Fullscreen bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/fullscreen.html)
+- [Scrollable bottom sheet](http://manufont.github.io/react-swipeable-bottom-sheet/scroll.html)
 
 
 ## Usage
@@ -32,7 +33,7 @@ import SwipeableBottomSheet from 'react-swipeable-bottom-sheet';
 </SwipeableBottomSheet>
 ```
 
-The bottom sheet's height (when open) scales automatically with its content. If it exceeds the window height, content is scrollable.
+The bottom sheet's height (when open) scales automatically with its content. If it exceeds the window height, content become scrollable.
 
 
 ### Props
@@ -43,10 +44,13 @@ The bottom sheet's height (when open) scales automatically with its content. If 
 | open | bool | | Use this property to enable controlled mode. If `true`, it will open the sheet. |
 | defaultOpen | bool | false | If `true`, the sheet is open at component mount. |
 | onChange | function(isOpen) | | The callback that fires after sheet opens or closes. |
+| onTransitionEnd | function() | | The callback that fires after opening or closing animation. |
 | fullScreen | bool | false | If `true`, the sheet takes the full height of the window when open. |
+| marginTop | number | 0 | The top margin applied to the top of the sheet when open. Use this prop to prevent navbar overflow. |
 | shadowTip | bool | true | If `true`, a box shadow is displayed at sheet bottom when closed. This is used to show that content is hidden below. |
 | topShadow | bool | true | If `true`, a box shadow is displayed at sheet top border. |
 | overlay | bool | true | If `true`, an overlay is displayed behind sheet when open. A click on the overlay closes the sheet. |
+| scrollTopAtClose | bool | true | If `true`, the content is scrolled to the top when sheet closes. |
 | swipeableViewsProps | object | `{}` | Props passed to SwipeableViews component (see [documentation](https://github.com/oliviertassinari/react-swipeable-views#api)). |
 | style | object | `{}` | Style applied on the root (non-swiped) component. |
 | bodyStyle | object | `{}` | Style applied on the body of the bottom sheet. |

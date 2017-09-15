@@ -29,12 +29,14 @@ var taskConfig = {
 			'index.html',
 			'controlled.html',
 			'fullscreen.html',
+			'scroll.html',
 			'.gitignore'
 		],
 		scripts: [
 			'uncontrolled.js',
 			'controlled.js',
-			'fullscreen.js'
+			'fullscreen.js',
+			'scroll.js'
 		],
 		less: [
 			'example.less'

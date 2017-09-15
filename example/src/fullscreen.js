@@ -42,11 +42,9 @@ class App extends React.Component {
 					open={this.state.open}
 					onChange={this.openBottomSheet.bind(this)}
 					fullScreen
-					shadowTip={false}
-					topShadow={false}
 				>
 					<div style={styles.title}>
-						Controlled fullscreen bottom sheet
+						Fullscreen bottom sheet
 					</div>
 					<div style={styles.text}>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
