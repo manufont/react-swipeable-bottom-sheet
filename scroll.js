@@ -45,27 +45,29 @@ var App = (function (_React$Component) {
 					fontSize: '24px',
 					textAlign: 'center'
 				},
-				text: {
-					padding: '10px',
-					boxSizing: 'border-box',
-					backgroundColor: 'white',
-					fontSize: '18px'
+				colouredDiv: function colouredDiv(hue) {
+					return {
+						height: '100px',
+						backgroundColor: 'hsl(' + hue % 360 + ', 80%, 80%)'
+					};
 				}
 			};
 
 			return _react2['default'].createElement(
 				_reactSwipeableBottomSheet2['default'],
-				{ overflowHeight: 64 },
+				{
+					overflowHeight: 64,
+					marginTop: 128,
+					scrollTopAtClose: false
+				},
 				_react2['default'].createElement(
 					'div',
 					{ style: styles.title },
-					'Swipeable bottom sheet'
+					'Scrollable bottom sheet'
 				),
-				_react2['default'].createElement(
-					'div',
-					{ style: styles.text },
-					'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-				)
+				Array(30).fill().map(function (o, i) {
+					return _react2['default'].createElement('div', { key: i, style: styles.colouredDiv(i * 20) });
+				})
 			);
 		}
 	}]);

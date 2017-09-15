@@ -78,14 +78,12 @@ var App = (function (_React$Component) {
 					{
 						open: this.state.open,
 						onChange: this.openBottomSheet.bind(this),
-						fullScreen: true,
-						shadowTip: false,
-						topShadow: false
+						fullScreen: true
 					},
 					_react2['default'].createElement(
 						'div',
 						{ style: styles.title },
-						'Controlled fullscreen bottom sheet'
+						'Fullscreen bottom sheet'
 					),
 					_react2['default'].createElement(
 						'div',
