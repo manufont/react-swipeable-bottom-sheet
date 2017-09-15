@@ -25,7 +25,6 @@ class App extends React.Component {
 			<SwipeableBottomSheet
 				overflowHeight={64}
 				marginTop={128}
-				scrollTopAtClose={false}
 			>
 				<div style={styles.title}>
 					Scrollable bottom sheet
