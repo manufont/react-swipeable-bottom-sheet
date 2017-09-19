@@ -49,7 +49,8 @@ var App = (function (_React$Component) {
 					padding: '10px',
 					boxSizing: 'border-box',
 					backgroundColor: 'white',
-					fontSize: '18px'
+					fontSize: '18px',
+					minHeight: '50vh'
 				}
 			};
 
