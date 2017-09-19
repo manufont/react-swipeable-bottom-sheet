@@ -155,7 +155,11 @@ class SwipeableBottomSheet extends Component {
 					containerStyle={styles.swiper.container}
 					slideStyle={styles.swiper.slide}
 				>
-					<div style={styles.swiper.body} ref={elt => this.bodyElt = elt}>
+					<div
+						ref={elt => this.bodyElt = elt}
+						style={styles.swiper.body}
+						className={`ReactSwipeableBottomSheet--${isOpen ? 'open' : 'close'}`}
+					>
 						{this.props.children}
 					</div>
 					<div style={styles.swiper.bottomSlide}/>

@@ -19,6 +19,7 @@ class App extends React.Component {
 				boxSizing: 'border-box',
 				backgroundColor: 'white',
 				fontSize: '18px',
+				minHeight: '50vh'
 			}
 		};
 
