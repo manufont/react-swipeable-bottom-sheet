@@ -4157,7 +4157,7 @@ var SwipeableBottomSheet = (function (_Component) {
 								return _this.bodyElt = elt;
 							},
 							style: styles.swiper.body,
-							className: 'ReactSwipeableBottomSheet--' + (isOpen ? 'open' : 'close')
+							className: 'ReactSwipeableBottomSheet--' + (isOpen ? 'open' : 'closed')
 						},
 						this.props.children
 					),
