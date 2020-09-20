@@ -1,6 +1,6 @@
 {
   "name": "react-swipeable-bottom-sheet",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Swipeable Bottom Sheet",
   "main": "lib/SwipeableBottomSheet.js",
   "author": "Emmanuel Fonteneau",
@@ -14,20 +14,20 @@
     "url": "https://github.com/manufont/react-swipeable-bottom-sheet/issues"
   },
   "dependencies": {
-    "classnames": "^2.1.2",
-    "react-swipeable-views": "^0.12.8"
+    "classnames": "^2.2.6",
+    "react-swipeable-views": "^0.13.9"
   },
   "devDependencies": {
-    "babel-eslint": "^4.1.3",
-    "eslint": "^1.6.0",
-    "eslint-plugin-react": "^3.5.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.20.6",
     "gulp": "^3.9.0",
-    "react": "^15.6.1",
-    "react-component-gulp-tasks": "^0.7.6",
-    "react-dom": "^15.6.1"
+    "react": "^16.13.0",
+    "react-component-gulp-tasks": "^0.7.7",
+    "react-dom": "^16.13.0"
   },
   "peerDependencies": {
-    "react": "^15.6.1"
+    "react": "^16.13.0"
   },
   "browserify-shim": {
     "react": "global:React"
