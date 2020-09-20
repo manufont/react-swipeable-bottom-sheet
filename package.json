@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.14.0-alpha.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
