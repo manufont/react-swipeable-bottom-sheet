@@ -15,13 +15,14 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "react-swipeable-views": "^0.13.9"
+    "react-swipeable-views": "^0.13.9",
+    "require-dir": "^1.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
     "eslint-plugin-react": "^7.20.6",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "react": "^16.13.0",
     "react-component-gulp-tasks": "^0.7.7",
     "react-dom": "^16.13.0"
